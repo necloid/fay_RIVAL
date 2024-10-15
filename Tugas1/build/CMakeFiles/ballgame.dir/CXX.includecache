@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/necloid/Tugas1/src/ball.hpp
+iostream
+-
+opencv4/opencv2/opencv.hpp
+-
+
+/home/necloid/Tugas1/src/game.hpp
+iostream
+-
+opencv4/opencv2/opencv.hpp
+-
+
+/home/necloid/Tugas1/src/main.cpp
+iostream
+-
+opencv4/opencv2/opencv.hpp
+-
+ball.hpp
+/home/necloid/Tugas1/src/ball.hpp
+game.hpp
+/home/necloid/Tugas1/src/game.hpp
+
