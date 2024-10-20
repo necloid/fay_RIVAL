@@ -1,8 +1,0 @@
-prefix=/home/necloid/turt_ws/devel
-
-Name: turtlesim_fay
-Description: Description of turtlesim_fay
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
