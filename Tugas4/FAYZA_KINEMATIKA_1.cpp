@@ -19,13 +19,13 @@ KonfigurasiRobot PemilihanRobot(const string& name){
 
     if(name == "LILDAN"){
         config.radius_roda = 0.0635;
-        config.sudut_roda[0] = 3 * M_PI / 4;
-        config.sudut_roda[1] = -M_PI / 2;
-        config.sudut_roda[2] = -3 * M_PI / 4;
+        config.sudut_roda[0] = -3 * M_PI / 4;
+        config.sudut_roda[1] = 0;
+        config.sudut_roda[2] = 3 * M_PI / 4;
     }else{
         config.radius_roda = 0.024;
-        config.sudut_roda[0] = -2 * M_PI / 3;
-        config.sudut_roda[1] = 2 * M_PI / 3;
+        config.sudut_roda[0] = 2 * M_PI / 3;
+        config.sudut_roda[1] = -2 * M_PI / 3;
         config.sudut_roda[2] = 0;
     }
     return config;
@@ -33,9 +33,9 @@ KonfigurasiRobot PemilihanRobot(const string& name){
 }
 
 void KecepatanRoda(double vx, double vy, double theta, const KonfigurasiRobot& config, double& m0, double& m1, double& m2){
-    m0 = (sin(config.sudut_roda[0]) * vx + cos(config.sudut_roda[0]) * vy + config.radius_robot * theta) / config.radius_roda;
-    m1 = (sin(config.sudut_roda[1]) * vx + cos(config.sudut_roda[1]) * vy + config.radius_robot * theta) / config.radius_roda;
-    m2 = (sin(config.sudut_roda[2]) * vx + cos(config.sudut_roda[2]) * vy + config.radius_robot * theta) / config.radius_roda;
+    m0 = (sin(config.sudut_roda[0]) * vx - cos(config.sudut_roda[0]) * vy + config.radius_robot * theta) / config.radius_roda;
+    m1 = (sin(config.sudut_roda[1]) * vx - cos(config.sudut_roda[1]) * vy + config.radius_robot * theta) / config.radius_roda;
+    m2 = (sin(config.sudut_roda[2]) * vx - cos(config.sudut_roda[2]) * vy + config.radius_robot * theta) / config.radius_roda;
 }
 
 void GetRobotInput(string& robotWho, int input[3][3], int& num_input){
